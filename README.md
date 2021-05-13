@@ -1,31 +1,77 @@
-## Synopsis
+# Lab 01
 
-At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
+| Outline | Value |
+| --- | --- |
+| Course | SEG 3X03 |
+| Date | Summer 2021 |
+| Professor | Andrew Forward, aforward@uottawa.ca |
+| Team | Youcef Ben Ali 300110797|
 
-## Code Example
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+### Java
 
-## Motivation
+To compile the java files run the following command from the newmath_java directory:
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+```bash
+javac --source-path src -d dist src/*.java
+```
 
-## Installation
+To run use the following command: 
 
-Provide code examples and explanations of how to get the project.
+```bash
+java -cp ./dist Main
+```
 
-## API Reference
+The following is a screenshot of the working java code in the command console
 
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+![Running Java in the console](images/MainRun.png)
 
-## Tests
+### JUnit
 
-Describe and show how to run the tests with code examples.
+To compile the Junit test files run the following command from the newmath_java directory:
 
-## Contributors
+```bash
+javac --source-path test -d dist -cp dist:lib/junit-platform-console-standalone-1.7.1.jar test/*.java
+```
 
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
+To run
+```
+java -jar lib/junit-platform-console-standalone-1.7.1.jar --class-path dist --scan-class-path
+```
 
-## License
+The following is a screenshot of the working test run
 
-A short snippet describing the license (MIT, Apache, etc.)
+![Running JUnit in the console](images/MainJUnitTest.png)
+
+
+### Elixir
+
+To compile the elixir program first go to the newmath_ex directory and run the following command: 
+
+```bash
+mix compile
+```
+
+Then run the following:
+
+```bash
+iex -S mix
+```
+
+The following is a screenshot of the elixir program working
+
+![Running Elixir in the console](images/ElixirRun.png)
+
+### ExUnit
+
+
+Since we already compiled earlier all we need to do to run is use the following command:
+
+```
+mix test
+```
+
+The following is a screenshot of the test working with elixir:
+
+![Running ExUnit in the console](images/ElixirTest.png)
+
