@@ -27,7 +27,7 @@ public class FizzbuzzTest {
 
     @Test
     public void FizzBuzzMassConvertGivenLength20() {
-        String[] expected = {"FizzBuzz", "1", "2", "Fizz", "4", "FizzBuzz", "Fizz", "7", "8", "Fizz"};
+        String[] expected = {"FizzBuzz", "1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz"};
         assertArrayEquals(expected, Fizzbuzz.MassFizzBuzzConverter(10));
     }
 }
