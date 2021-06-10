@@ -4,14 +4,17 @@ public class Fizzbuzz {
 
         String result = "";
         if(num!=null){
-            if(num%3==0){
-                result+="Fizz";
+            if(num%3 ==0 && num%5 ==0){
+                result = "FizzBuzz";
             }
-            if(num%5==0){
-                result+="Buzz";
+            else if(num%3==0){
+                result = "Fizz";
             }
-            if(result==""){
-                result+= Integer.toString(num);
+            else if(num%5==0){
+                result = "Buzz";
+            }
+            else {
+                result = Integer.toString(num);
             }
 
             return result;
