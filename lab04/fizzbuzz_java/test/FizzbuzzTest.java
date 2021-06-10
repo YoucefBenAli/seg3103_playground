@@ -14,4 +14,9 @@ public class FizzbuzzTest {
     public void FizzBuzzConvertGivenZero() {
         assertEquals("FizzBuzz", Fizzbuzz.FizzBuzzConverter(0));
     }
+
+    @Test
+    public void FizzBuzzConvertGivenNegative() {
+        assertEquals("Buzz", Fizzbuzz.FizzBuzzConverter(6));
+    }
 }
