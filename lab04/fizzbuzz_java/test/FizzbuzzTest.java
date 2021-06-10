@@ -31,6 +31,11 @@ public class FizzbuzzTest {
     }
 
     @Test
+    public void FizzBuzzConvertGivenFive() {
+        assertEquals("Buzz", Fizzbuzz.FizzBuzzConverter(5));
+    }
+
+    @Test
     public void FizzBuzzMassConvertGivenLength20() {
         String[] expected = {"FizzBuzz", "1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz"};
         assertArrayEquals(expected, Fizzbuzz.MassFizzBuzzConverter(10));
