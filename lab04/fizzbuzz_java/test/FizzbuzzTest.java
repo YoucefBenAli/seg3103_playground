@@ -5,9 +5,13 @@ import org.junit.Test;
 
 public class FizzbuzzTest {
     @Test
-    public void nextDate_sample() {
+    public void FizzBuzzConvertGivenNull() {
         assertThrows(IllegalArgumentException.class, () -> {
             Fizzbuzz.FizzBuzzConverter(null);
         });
+    }
+    @Test
+    public void FizzBuzzConvertGivenZero() {
+        assertEquals("0", Fizzbuzz.FizzBuzzConverter(0));
     }
 }
