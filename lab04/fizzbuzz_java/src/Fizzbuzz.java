@@ -2,22 +2,19 @@ public class Fizzbuzz {
 
     public static String FizzBuzzConverter(Integer num){
 
-        String result = "";
         if(num!=null){
             if(num%3 ==0 && num%5 ==0){
-                result = "FizzBuzz";
+                return "FizzBuzz";
             }
             else if(num%3==0){
-                result = "Fizz";
+                return "Fizz";
             }
             else if(num%5==0){
-                result = "Buzz";
+                return "Buzz";
             }
             else {
-                result = Integer.toString(num);
+                return Integer.toString(num);
             }
-
-            return result;
         }
         else{
             throw new IllegalArgumentException("Number can not be null");
