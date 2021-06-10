@@ -10,13 +10,7 @@ defmodule Grades.Calculator do
 
   def letter_grade(%{homework: homework, labs: labs, midterm: midterm, final: final}) do
 
-    avg_homework = avg(homework)
-
-    avg_labs = avg(labs)
-
-    avg_exams = (midterm + final) / 2
-
-    num_labs = findNumLabs(labs)
+    {avg_homework,avg_labs,avg_exams,num_labs} = setValues(homework, labs, midterm, final, labs)
 
     if failed_to_participate(avg_homework, avg_exams, num_labs) do
       "EIN"
@@ -40,13 +34,9 @@ defmodule Grades.Calculator do
   end
 
   def numeric_grade(%{homework: homework, labs: labs, midterm: midterm, final: final}) do
-    avg_homework = avg(homework)
 
-    avg_labs = avg(labs)
+    {avg_homework,avg_labs,avg_exams,num_labs} = setValues(homework, labs, midterm, final, labs)
 
-    avg_exams = (midterm + final) / 2
-
-    num_labs = findNumLabs(labs)
 
     if failed_to_participate(avg_homework, avg_exams, num_labs) do
       0
@@ -67,6 +57,10 @@ defmodule Grades.Calculator do
         :else -> 0
       end
     end
+  end
+
+  def setValues(homework, labs, midterm, final, labs)do
+    {avg(homework), avg(labs), (midterm + final) / 2, findNumLabs(labs)}
   end
 
   def calculate_grade(avg_labs, avg_homework, midterm, final) do
