@@ -16,7 +16,7 @@ public class FizzbuzzTest {
     }
 
     @Test
-    public void FizzBuzzConvertGivenNegative() {
+    public void FizzBuzzConvertGivenSix() {
         assertEquals("Fizz", Fizzbuzz.FizzBuzzConverter(6));
     }
 }
