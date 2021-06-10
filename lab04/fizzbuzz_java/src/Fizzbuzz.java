@@ -31,7 +31,10 @@ public class Fizzbuzz {
     public static String[] MassFizzBuzzConverter(Integer length){
 
         if (length==null || length<1){
-            throw new IllegalArgumentException("Number can not be null and needs to be above 0");
+            throw new IllegalArgumentException("Number can not be null");
+        }
+        if (length<1){
+            throw new IllegalArgumentException("Number needs to be above 0");
         }
 
         String[] result = new String[length];
