@@ -6,18 +6,26 @@ public class Fizzbuzz {
             throw new IllegalArgumentException("Number can not be null");
         }
 
-        if(num%3 ==0 && num%5 ==0){
+        if(divisibleBy3(num) && divisibleBy5(num)){
             return "FizzBuzz";
         }
-        else if(num%3==0){
+        else if(divisibleBy3(num)){
             return "Fizz";
         }
-        else if(num%5==0){
+        else if(divisibleBy5(num)){
             return "Buzz";
         }
         else{
             return Integer.toString(num);
         }
+    }
+
+    private static boolean divisibleBy3(int number){
+        return number%3 == 0;
+    }
+
+    private static boolean divisibleBy5(int number){
+        return number%5 == 0;
     }
 
     public static String[] MassFizzBuzzConverter(Integer length){
