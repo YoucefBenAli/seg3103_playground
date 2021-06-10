@@ -26,8 +26,34 @@ public class FizzbuzzTest {
     }
 
     @Test
+    public void FizzBuzzConvertGivenNegative() {
+        assertEquals("Fizz", Fizzbuzz.FizzBuzzConverter(-6));
+    }
+
+    @Test
     public void FizzBuzzMassConvertGivenLength20() {
         String[] expected = {"FizzBuzz", "1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz"};
         assertArrayEquals(expected, Fizzbuzz.MassFizzBuzzConverter(10));
+    }
+
+    @Test
+    public void FizzBuzzMassConvertGivenNull() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            Fizzbuzz.MassFizzBuzzConverter(null);
+        });
+    }
+
+    @Test
+    public void FizzBuzzMassConvertGiven0() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            Fizzbuzz.MassFizzBuzzConverter(0);
+        });
+    }
+
+    @Test
+    public void FizzBuzzMassConvertGivenNegative() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            Fizzbuzz.MassFizzBuzzConverter(-1);
+        });
     }
 }
