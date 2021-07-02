@@ -27,3 +27,20 @@ Here is an example of what the stubbing looks like on the website:
 ![Real Results](images/TrueImplementationResults.PNG)
 
 This is actually an excellent example of the importance of integration testing. Individually the calculator.ex file passed all tests and had no issues with it whatsoever. However, without having used integration testing we did not know that the methods in that file would not work when working with the website since the website gave arguments in string form rather than integer form. Therefore, to fix this problem we would need to adjust the methods so that the results are converted from string form to integer form before performing the calculations
+
+------
+## Part 2: Twitter
+
+Initially not all test cases worked for the code provided to us. As can be seen in the screenshot below the handleNull and dontReturnSubstring methods were not passing
+
+![Initial Results](images/TwitterInitialTestResults.PNG)
+
+After examining the source code I realized that the reason why was the isMentioned method does not have code handling null values and that the code to check who was tagged in the tweet only checks that the name is a substring and not if its equal to the whole string after the "@". Here are the code changes I added to fix this:
+
+![Final Code](images/FinalCodeTwitter.PNG)
+
+The final test results can be seen below:
+
+![Initial Results](images/TwitterFinalTestResults.PNG)
+
+As can be seen in the screenshot the actual_call test did not work but that is simply due to the way the code for load_tweet works. The function uses a random number generator to generate a string and has a 45% change of getting the string contianing the correct name for the test to pass and a 55% change of it returning a string with the incorrect name expected from the test.
